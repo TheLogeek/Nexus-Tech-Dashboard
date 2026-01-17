@@ -124,7 +124,7 @@ with left_bot:
         text=region_data["Region"],
         mode="text",
         textfont=dict(
-            color="black",
+            color="green",
             size=14
         )
     )
