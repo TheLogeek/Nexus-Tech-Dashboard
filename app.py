@@ -109,8 +109,22 @@ with left_bot:
     region_data = filtered_df.groupby("Region")["Total_Revenue"].sum().reset_index()
     region_map = {"North America": "USA", "Europe": "FRA", "Asia": "CHN", "South America": "BRA", "Africa": "NGA"}
     region_data["Country"] = region_data["Region"].map(region_map)
-    fig_map = px.choropleth(region_data, locations="Country", color="Total_Revenue", 
-                            hover_name="Region", color_continuous_scale="Blues", title="Revenue by Region")
+
+    fig_map = px.choropleth(
+        region_data,
+        locations="Country",
+        color="Total_Revenue",
+        hover_name="Region",
+        color_continuous_scale="Blues",
+        title="Revenue by Region"
+    )
+
+    fig_map.add_scattergeo(
+        locations=region_data["Country"],
+        text=region_data["Region"],
+        mode="text"
+    )
+
     st.plotly_chart(fig_map, use_container_width=True)
 
 with right_bot:
