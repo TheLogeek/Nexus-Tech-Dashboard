@@ -122,8 +122,13 @@ with left_bot:
     fig_map.add_scattergeo(
         locations=region_data["Country"],
         text=region_data["Region"],
-        mode="text"
+        mode="text",
+        textfont=dict(
+            color="black",
+            size=14
+        )
     )
+
 
     st.plotly_chart(fig_map, use_container_width=True)
 
