@@ -1,5 +1,8 @@
 # Nexus Tech: Prescriptive Sales & Scenario Analytics Dashboard
 
+[View Live demo](https://nexus-tech-dashboard.streamlit.app)
+
+
 An interactive Business Intelligence (BI) tool built with Python and Streamlit to analyze global sales performance and simulate business growth scenarios.
 
 ## 🚀 Overview
