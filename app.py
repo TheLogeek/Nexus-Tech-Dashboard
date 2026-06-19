@@ -97,7 +97,7 @@ with left_top:
     st.plotly_chart(fig_donut, use_container_width=True)
 
 with right_top:
-    monthly_df = filtered_df.set_index("Date").resample("M")[["Total_Revenue", "Sim_Revenue"]].sum().reset_index()
+    monthly_df = filtered_df.set_index("Date").resample("ME")[["Total_Revenue", "Sim_Revenue"]].sum().reset_index()
     fig_line = px.line(monthly_df, x="Date", y=["Total_Revenue", "Sim_Revenue"], 
                        markers=True, title="Actual vs. Simulated Revenue Trend")
     st.plotly_chart(fig_line, use_container_width=True)
